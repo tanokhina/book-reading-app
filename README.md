@@ -1,5 +1,5 @@
-Book reader app project overview
+Project Overview
 
-The app is for tracking how many books user has read in a year. User can add a book name, author of the book, a short (500 symbols) review of the book. User can check status: in progress, finished, by default should be not started status. 
-On a Home screen user can set a number of books they plan to read in a year and option to add a book. User can add up to 100 books max. and min. 1 book. 
-
+Book Reader is a simple app for tracking how many books a user reads in a year.
+Users can add books by providing a title, author, and quick thoughts (up to 500 characters). Each book has a reading status: "not started" (default), "in progress", or "finished".
+On the Home screen, users can set a yearly reading goal and add new books to their list. The total number of books is limited to a minimum of 1 and a maximum of 100.
