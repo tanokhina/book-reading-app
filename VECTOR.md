@@ -1,6 +1,6 @@
 # Vision
 
-Create a simple and motivating reading tracker that helps users stay consistent with their yearly reading goals without overwhelming them. The app focuses on clarity, ease of use, and lightweight interaction rather than deep analytics or complex features.
+Create a simple and motivating reading tracker iOS app that helps users stay consistent with their yearly reading goals without overwhelming them. The app focuses on clarity, ease of use, and lightweight interaction rather than deep analytics or complex features.
 
 # Audience
 - Casual readers who want to build a reading habit

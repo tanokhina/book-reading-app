@@ -1,6 +1,6 @@
 # Claude Instructions
 
-This project is a Book Reader app for tracking yearly reading progress.
+This project is a Book Reader iOS app for tracking yearly reading progress.
 
 ## Read the following documents before generating code:
 
