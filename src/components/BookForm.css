@@ -1,0 +1,20 @@
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.book-form__error {
+  font-size: 13px;
+  color: #EF4444;
+  font-weight: 500;
+  padding: var(--sp-2) var(--sp-3);
+  background: #FEF2F2;
+  border-radius: var(--radius-sm);
+}
+
+.book-form__actions {
+  display: flex;
+  gap: var(--sp-3);
+  padding-top: var(--sp-2);
+}

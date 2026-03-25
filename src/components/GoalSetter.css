@@ -1,0 +1,49 @@
+.goal-setter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.goal-setter__label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.goal-setter__display {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.goal-setter__value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.goal-setter__edit {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.goal-setter__input {
+  width: 72px;
+  padding: 6px 10px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  outline: none;
+  text-align: center;
+}
+
+.goal-setter__input::-webkit-inner-spin-button,
+.goal-setter__input::-webkit-outer-spin-button {
+  appearance: none;
+}

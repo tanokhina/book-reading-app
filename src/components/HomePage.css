@@ -1,0 +1,40 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.home-page__year {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+}
+
+.progress-card__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--sp-3);
+  gap: var(--sp-2);
+}
+
+.progress-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.progress-card__count {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.progress-card__congrats {
+  font-size: 13px;
+  color: var(--color-success);
+  font-weight: 500;
+  margin-top: var(--sp-2);
+  text-align: center;
+}
