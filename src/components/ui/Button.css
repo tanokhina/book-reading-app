@@ -69,6 +69,17 @@
   color: var(--color-text-primary);
 }
 
+.btn--text {
+  background: transparent;
+  color: var(--color-primary);
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.btn--text:hover:not(:disabled) {
+  color: var(--color-primary-hover);
+}
+
 .btn:disabled {
   opacity: 0.45;
   cursor: not-allowed;

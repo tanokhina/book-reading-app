@@ -1,5 +1,6 @@
 .progress-bar {
   width: 100%;
+  align-self: stretch;
   height: 10px;
   background: var(--color-secondary);
   border-radius: 999px;

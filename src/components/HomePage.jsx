@@ -38,22 +38,16 @@ export default function HomePage({ books, yearlyGoal, onGoalSave, onAddBook }) {
         </button>
       </div>
 
-      <Card>
+      <Card className="goal-card">
         <GoalSetter
           goal={yearlyGoal}
           booksCount={books.length}
           onSave={onGoalSave}
         />
-      </Card>
-
-      <Card className="progress-card">
-        <div className="progress-card__header">
-          <span className="progress-card__title">Reading progress</span>
-          <span className="progress-card__count">{finishedCount} / {yearlyGoal} books read</span>
-        </div>
         <ProgressBar value={finishedCount} max={yearlyGoal} />
+        <span className="goal-card__count">{finishedCount} / {yearlyGoal} books read</span>
         {finishedCount >= yearlyGoal && yearlyGoal > 0 && (
-          <p className="progress-card__congrats">Goal reached! Keep it up!</p>
+          <p className="goal-card__congrats">Goal reached! Keep it up!</p>
         )}
       </Card>
 

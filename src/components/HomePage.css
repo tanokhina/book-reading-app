@@ -42,30 +42,20 @@
   cursor: default;
 }
 
-.progress-card__header {
+.goal-card {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: var(--sp-3);
-  gap: var(--sp-2);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-3);
 }
 
-.progress-card__title {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--color-text-primary);
-}
-
-.progress-card__count {
+.goal-card__count {
   font-size: 13px;
   color: var(--color-text-secondary);
-  white-space: nowrap;
 }
 
-.progress-card__congrats {
+.goal-card__congrats {
   font-size: 13px;
   color: var(--color-success);
   font-weight: 500;
-  margin-top: var(--sp-2);
-  text-align: center;
 }

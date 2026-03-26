@@ -47,7 +47,7 @@ export default function GoalSetter({ goal, booksCount, onSave }) {
       ) : (
         <div className="goal-setter__display">
           <span className="goal-setter__value">{goal} books</span>
-          <Button size="sm" variant="ghost" onClick={() => setEditing(true)}>Edit</Button>
+          <Button size="sm" variant="text" onClick={() => setEditing(true)}>Edit goal</Button>
         </div>
       )}
     </div>
