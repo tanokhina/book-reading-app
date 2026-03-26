@@ -59,7 +59,6 @@ export default function HomePage({ books, yearlyGoal, maxBooks, onGoalSave, onAd
       <div className="my-books">
         <div className="my-books__header">
           <h2 className="my-books__title">My Books</h2>
-          <span className="my-books__count">{books.length} / {maxBooks}</span>
         </div>
         <BookList
           books={books}
