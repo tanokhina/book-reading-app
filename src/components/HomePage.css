@@ -4,11 +4,42 @@
   gap: var(--sp-4);
 }
 
-.home-page__year {
+.year-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 calc(-1 * var(--sp-4));
+  padding: 0 24px;
+}
+
+.year-nav__year {
   font-size: 28px;
   font-weight: 700;
   color: var(--color-text-primary);
   letter-spacing: -0.5px;
+}
+
+.year-nav__chevron {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: var(--color-text-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.year-nav__chevron:hover:not(:disabled) {
+  background: var(--color-secondary);
+}
+
+.year-nav__chevron:disabled {
+  color: var(--color-neutral);
+  cursor: default;
 }
 
 .progress-card__header {
