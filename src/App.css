@@ -1,8 +1,8 @@
 .app {
   width: 100%;
   max-width: 430px;
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100vh;
+  height: 100dvh;
   background: var(--color-surface);
   display: flex;
   flex-direction: column;
@@ -29,8 +29,16 @@
 
 .app-content {
   flex: 1;
+  overflow-y: auto;
   padding: var(--sp-4);
-  padding-bottom: calc(var(--sp-8) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: var(--sp-4);
+}
+
+.app-footer {
+  padding: var(--sp-3) var(--sp-4);
+  padding-bottom: calc(var(--sp-3) + env(safe-area-inset-bottom, 0px));
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-secondary);
 }
 
 /* Limit prompt */

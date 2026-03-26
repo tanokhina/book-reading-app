@@ -58,12 +58,17 @@ export default function App() {
           yearlyGoal={yearlyGoal}
           maxBooks={MAX_BOOKS}
           onGoalSave={handleGoalSave}
-          onAddBook={handleAddBook}
           onEditBook={setEditingBook}
           onDeleteBook={handleBookDeleted}
           onStatusChange={handleStatusChange}
         />
       </main>
+
+      <footer className="app-footer">
+        <Button variant="primary" size="lg" fullWidth onClick={handleAddBook}>
+          + Add book
+        </Button>
+      </footer>
 
       {showAddModal && (
         <AddBookModal

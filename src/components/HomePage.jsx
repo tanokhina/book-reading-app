@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import Card from './ui/Card.jsx'
 import ProgressBar from './ui/ProgressBar.jsx'
-import Button from './ui/Button.jsx'
 import GoalSetter from './GoalSetter.jsx'
 import BookList from './BookList.jsx'
 import './HomePage.css'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
-export default function HomePage({ books, yearlyGoal, maxBooks, onGoalSave, onAddBook, onEditBook, onDeleteBook, onStatusChange }) {
+export default function HomePage({ books, yearlyGoal, maxBooks, onGoalSave, onEditBook, onDeleteBook, onStatusChange }) {
   const [selectedYear, setSelectedYear] = useState(CURRENT_YEAR)
   const finishedCount = books.filter((b) => b.status === 'finished').length
 
@@ -51,10 +50,6 @@ export default function HomePage({ books, yearlyGoal, maxBooks, onGoalSave, onAd
           <p className="goal-card__congrats">Goal reached! Keep it up!</p>
         )}
       </Card>
-
-      <Button variant="primary" size="lg" fullWidth onClick={onAddBook}>
-        + Add book
-      </Button>
 
       <div className="my-books">
         <div className="my-books__header">
