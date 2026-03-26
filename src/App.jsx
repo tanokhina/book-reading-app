@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useLocalStorage } from './hooks/useLocalStorage.js'
 import HomePage from './components/HomePage.jsx'
-import BookList from './components/BookList.jsx'
 import AddBookModal from './components/AddBookModal.jsx'
 import EditBookModal from './components/EditBookModal.jsx'
 import Modal from './components/ui/Modal.jsx'
@@ -14,7 +13,6 @@ const DEFAULT_GOAL = 12
 export default function App() {
   const [books, setBooks] = useLocalStorage('books', [])
   const [yearlyGoal, setYearlyGoal] = useLocalStorage('yearlyGoal', DEFAULT_GOAL)
-  const [activeTab, setActiveTab] = useState('home')
   const [showAddModal, setShowAddModal] = useState(false)
   const [showLimitPrompt, setShowLimitPrompt] = useState(false)
   const [editingBook, setEditingBook] = useState(null)
@@ -55,45 +53,17 @@ export default function App() {
       </header>
 
       <main className="app-content">
-        {activeTab === 'home' ? (
-          <HomePage
-            books={books}
-            yearlyGoal={yearlyGoal}
-            onGoalSave={handleGoalSave}
-            onAddBook={handleAddBook}
-          />
-        ) : (
-          <div className="books-page">
-            <h2 className="books-page__title">My Books</h2>
-            <p className="books-page__count">{books.length} / {MAX_BOOKS} books</p>
-            <BookList
-              books={books}
-              onEdit={setEditingBook}
-              onDelete={handleBookDeleted}
-              onStatusChange={handleStatusChange}
-            />
-          </div>
-        )}
+        <HomePage
+          books={books}
+          yearlyGoal={yearlyGoal}
+          maxBooks={MAX_BOOKS}
+          onGoalSave={handleGoalSave}
+          onAddBook={handleAddBook}
+          onEditBook={setEditingBook}
+          onDeleteBook={handleBookDeleted}
+          onStatusChange={handleStatusChange}
+        />
       </main>
-
-      <nav className="tab-bar" role="navigation" aria-label="Main navigation">
-        <button
-          className={`tab-bar__tab${activeTab === 'home' ? ' tab-bar__tab--active' : ''}`}
-          onClick={() => setActiveTab('home')}
-          aria-current={activeTab === 'home' ? 'page' : undefined}
-        >
-          <span className="tab-bar__icon" aria-hidden="true">⌂</span>
-          <span className="tab-bar__label">Home</span>
-        </button>
-        <button
-          className={`tab-bar__tab${activeTab === 'books' ? ' tab-bar__tab--active' : ''}`}
-          onClick={() => setActiveTab('books')}
-          aria-current={activeTab === 'books' ? 'page' : undefined}
-        >
-          <span className="tab-bar__icon" aria-hidden="true">&#9776;</span>
-          <span className="tab-bar__label">Books{books.length > 0 ? ` (${books.length})` : ''}</span>
-        </button>
-      </nav>
 
       {showAddModal && (
         <AddBookModal

@@ -3,11 +3,12 @@ import Card from './ui/Card.jsx'
 import ProgressBar from './ui/ProgressBar.jsx'
 import Button from './ui/Button.jsx'
 import GoalSetter from './GoalSetter.jsx'
+import BookList from './BookList.jsx'
 import './HomePage.css'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
-export default function HomePage({ books, yearlyGoal, onGoalSave, onAddBook }) {
+export default function HomePage({ books, yearlyGoal, maxBooks, onGoalSave, onAddBook, onEditBook, onDeleteBook, onStatusChange }) {
   const [selectedYear, setSelectedYear] = useState(CURRENT_YEAR)
   const finishedCount = books.filter((b) => b.status === 'finished').length
 
@@ -54,6 +55,19 @@ export default function HomePage({ books, yearlyGoal, onGoalSave, onAddBook }) {
       <Button variant="primary" size="lg" fullWidth onClick={onAddBook}>
         + Add book
       </Button>
+
+      <div className="my-books">
+        <div className="my-books__header">
+          <h2 className="my-books__title">My Books</h2>
+          <span className="my-books__count">{books.length} / {maxBooks}</span>
+        </div>
+        <BookList
+          books={books}
+          onEdit={onEditBook}
+          onDelete={onDeleteBook}
+          onStatusChange={onStatusChange}
+        />
+      </div>
     </div>
   )
 }
