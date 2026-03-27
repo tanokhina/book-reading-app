@@ -12,12 +12,18 @@ const STATUS_OPTIONS = [
   { value: 'finished',    label: 'Finished' },
 ]
 
-export default function EditBookModal({ book, books, onSave, onClose }) {
+export default function EditBookModal({ book, books, onSave, onDelete, onClose }) {
   const [title, setTitle] = useState(book.title)
   const [author, setAuthor] = useState(book.author)
   const [review, setReview] = useState(book.review || '')
   const [status, setStatus] = useState(book.status)
   const [error, setError] = useState('')
+  const [confirmDelete, setConfirmDelete] = useState(false)
+
+  const handleDelete = () => {
+    onDelete(book.id)
+    onClose()
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -81,6 +87,19 @@ export default function EditBookModal({ book, books, onSave, onClose }) {
           <Button type="button" variant="secondary" onClick={onClose} fullWidth>Cancel</Button>
           <Button type="submit" variant="primary" fullWidth>Save changes</Button>
         </div>
+        {confirmDelete ? (
+          <div className="book-form__delete-confirm">
+            <p className="book-form__delete-text">Delete this book?</p>
+            <div className="book-form__actions">
+              <Button type="button" variant="secondary" onClick={() => setConfirmDelete(false)} fullWidth>Cancel</Button>
+              <Button type="button" variant="danger" onClick={handleDelete} fullWidth>Yes, delete</Button>
+            </div>
+          </div>
+        ) : (
+          <Button type="button" variant="text" onClick={() => setConfirmDelete(true)} fullWidth>
+            Delete book
+          </Button>
+        )}
       </form>
     </Modal>
   )

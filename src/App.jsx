@@ -59,8 +59,6 @@ export default function App() {
           maxBooks={MAX_BOOKS}
           onGoalSave={handleGoalSave}
           onEditBook={setEditingBook}
-          onDeleteBook={handleBookDeleted}
-          onStatusChange={handleStatusChange}
         />
       </main>
 
@@ -83,6 +81,7 @@ export default function App() {
           book={editingBook}
           books={books}
           onSave={handleBookSaved}
+          onDelete={handleBookDeleted}
           onClose={() => setEditingBook(null)}
         />
       )}

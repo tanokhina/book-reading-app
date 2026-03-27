@@ -7,7 +7,7 @@ import './HomePage.css'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
-export default function HomePage({ books, yearlyGoal, maxBooks, onGoalSave, onEditBook, onDeleteBook, onStatusChange }) {
+export default function HomePage({ books, yearlyGoal, maxBooks, onGoalSave, onEditBook }) {
   const [selectedYear, setSelectedYear] = useState(CURRENT_YEAR)
   const finishedCount = books.filter((b) => b.status === 'finished').length
 
@@ -55,12 +55,7 @@ export default function HomePage({ books, yearlyGoal, maxBooks, onGoalSave, onEd
         <div className="my-books__header">
           <h2 className="my-books__title">My Books</h2>
         </div>
-        <BookList
-          books={books}
-          onEdit={onEditBook}
-          onDelete={onDeleteBook}
-          onStatusChange={onStatusChange}
-        />
+        <BookList books={books} onEdit={onEditBook} />
       </div>
     </div>
   )
